@@ -38,3 +38,7 @@
 .login-greeting-screen .login-greeting-screen-description {
   line-height: 1.4;
 }
+
+.tab-content {
+  overflow: auto;
+}

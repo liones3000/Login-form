@@ -1,4 +1,5 @@
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/js/dist/tab.js";
 import "../css/style.css";
 import UI from "./config/ui.config";
 import { validate } from "./helpers/validate";
@@ -6,9 +7,17 @@ import { showInputError, removeInputError } from "./views/form";
 import { login } from "./services/auth.service";
 import { notify } from "./views/notifications";
 import { getNews } from "./services/news.service";
+import { getCountries } from "./services/apiService";
 
 const { form, inputEmail, inputPassword } = UI;
 const inputs = [inputEmail, inputPassword];
+
+//Init
+$("#myTab a").on("click", function (e) {
+  e.preventDefault();
+  $(this).tab("show");
+});
+
 //Events
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -42,22 +51,6 @@ async function onsubmit() {
     notify({ msg: "Login failed", className: "alert-danger" });
   }
 }
+// getCountries();
 // denis.m.pcspace@gmail.com
 // dmgame12345
-
-// setTimeout(
-//   () => notify({ mas: "Some notifycation 1", className: "alert-danger" }),
-//   500
-// );
-// setTimeout(
-//   () => notify({ mas: "Some notifycation 2", className: "alert-warning" }),
-//   1000
-// );
-// setTimeout(
-//   () => notify({ mas: "Some notifycation 3", className: "alert-primary" }),
-//   1500
-// );
-
-// notify({ mas: "Some notifycation 1", className: "alert-danger" });
-// notify({ mas: "Some notifycation 2", className: "alert-warning" });
-// notify({ mas: "Some notifycation 3", className: "alert-primary" });

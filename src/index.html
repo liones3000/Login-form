@@ -8,35 +8,203 @@
   </head>
   <body>
     <div class="login-page-wrapp d-flex">
-      <div class="login-form-wrap d-flex align-items-center">
-        <div class="form-card card ml-auto">
-          <div class="card-body">
-            <h4 class="card-title">Please Login</h4>
-            <form name="loginForm">
-              <div class="form-group">
-                <label for="email">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter email"
-                  data-required="email"
-                  data-invalid-message="Please provide valid email example@example.com"
-                />
+      <div
+        class="login-form-wrap d-flex flex-column align-items-center justify-content-center"
+      >
+        <nav>
+          <div class="nav nav-tabs" id="myTab" role="tablist">
+            <a
+              class="nav-link active"
+              id="nav-login-tab"
+              data-toggle="tab"
+              href="#nav-login"
+              role="tab"
+              aria-controls="nav-login"
+              aria-selected="true"
+              >Login</a
+            >
+            <a
+              class="nav-link"
+              id="nav-registration-tab"
+              data-toggle="tab"
+              href="#nav-registration"
+              role="tab"
+              aria-controls="nav-registration"
+              aria-selected="false"
+              >Registration</a
+            >
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="nav-login"
+            role="tabpanel"
+            aria-labelledby="nav-login-tab"
+          >
+            <div class="form-card card ml-auto">
+              <div class="card-body">
+                <h4 class="card-title">Please Login</h4>
+                <form name="loginForm">
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                      data-required="email"
+                      data-invalid-message="Please provide valid email example@example.com"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Password"
+                      data-required="password"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
               </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Password"
-                  data-required="password"
-                />
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-registration"
+            role="tabpanel"
+            aria-labelledby="nav-registration-tab"
+          >
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Enter data in form</h4>
+                <form name="RegistrationForm">
+                  <div class="form-row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="email-reg">Email address</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email-reg"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                          data-required="email"
+                          data-invalid-message="Please provide valid email example@example.com"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="password-reg">Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password-reg"
+                          placeholder="Password"
+                          data-required="password"
+                          data-invalid-message="Please enter valid password. 0-9, a-z, A-Z, min 4 symbol"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="nickname">Nickname</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nickname"
+                          aria-describedby="nickNameHelp"
+                          placeholder="Enter Nickname"
+                          data-required="nickname"
+                          data-invalid-message="Please provide valid nickname: 0-9, a-z, A-Z, min 4 symbol"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="firstName">FirstName</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="firstName"
+                          aria-describedby="firstNameHelp"
+                          placeholder="Enter FirstName"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="lastName">LastName</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="lastName"
+                          aria-describedby="lastNameHelp"
+                          placeholder="Enter LastName"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input
+                          type="phone"
+                          class="form-control"
+                          id="phone"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                          data-required="phone"
+                          data-invalid-message="Please enter the number by pattern"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="gender_orientation"
+                          >Gender orientation</label
+                        >
+                        <select id="gender_orientation" class="form-control">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="dateB">DateB</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="dateB"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="country">Country</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="country"
+                          aria-describedby="countryHelp"
+                          placeholder="Enter Country"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="city">City</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="city"
+                          aria-describedby="cityHelp"
+                          placeholder="Enter City"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="row d-flex justify-content-center align-items-center mt-2"
+                  >
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
+                  </div>
+                </form>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
