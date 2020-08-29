@@ -11,7 +11,22 @@ export async function login(email, password) {
       `/auth/login`,
       JSON.stringify({ email, password })
     );
-    console.log(response);
+    // console.log(response);
+    return response;
+  } catch (err) {
+    console.log(`login: ${err}`);
+    return Promise.reject(err);
+  }
+}
+
+/**
+ *
+ * @param {Object} params
+ */
+export async function registration(params) {
+  try {
+    const response = await axios.post(`/auth/signup`, JSON.stringify(params));
+    // console.log(response);
     return response;
   } catch (err) {
     console.log(`login: ${err}`);

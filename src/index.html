@@ -35,14 +35,14 @@
             >
           </div>
         </nav>
-        <div class="tab-content" id="nav-tabContent">
+        <div class="container tab-content" id="nav-tabContent">
           <div
             class="tab-pane fade show active"
             id="nav-login"
             role="tabpanel"
             aria-labelledby="nav-login-tab"
           >
-            <div class="form-card card ml-auto">
+            <div class="form-card card ml-auto mr-auto">
               <div class="card-body">
                 <h4 class="card-title">Please Login</h4>
                 <form name="loginForm">
@@ -105,7 +105,7 @@
                           id="password-reg"
                           placeholder="Password"
                           data-required="password"
-                          data-invalid-message="Please enter valid password. 0-9, a-z, A-Z, min 4 symbol"
+                          data-invalid-message="Please enter valid password. 0-9, a-z, A-Z, min 8 char length"
                         />
                       </div>
                       <div class="form-group">
@@ -126,6 +126,8 @@
                           type="text"
                           class="form-control"
                           id="firstName"
+                          data-required="firstName"
+                          data-invalid-message="Please provide valid FirstName: 0-9, a-z, A-Z, min 4 symbol"
                           aria-describedby="firstNameHelp"
                           placeholder="Enter FirstName"
                         />
@@ -136,6 +138,8 @@
                           type="text"
                           class="form-control"
                           id="lastName"
+                          data-required="lastName"
+                          data-invalid-message="Please provide valid LastName: 0-9, a-z, A-Z, min 4 symbol"
                           aria-describedby="lastNameHelp"
                           placeholder="Enter LastName"
                         />
@@ -145,13 +149,13 @@
                       <div class="form-group">
                         <label for="phone">Phone</label>
                         <input
-                          type="phone"
+                          type="text"
                           class="form-control"
                           id="phone"
-                          aria-describedby="emailHelp"
-                          placeholder="Enter email"
+                          aria-describedby="phoneHelp"
+                          placeholder="Enter phone"
                           data-required="phone"
-                          data-invalid-message="Please enter the number by pattern"
+                          data-invalid-message="Please enter the number by pattern (099) 123-45-67"
                         />
                       </div>
                       <div class="form-group">
@@ -166,11 +170,14 @@
                       <div class="form-group">
                         <label for="dateB">DateB</label>
                         <input
-                          type="date"
+                          type="text"
                           class="form-control"
                           id="dateB"
-                          aria-describedby="emailHelp"
-                          placeholder="Enter email"
+                          aria-describedby="phoneHelp"
+                          placeholder="Enter Date of Birth"
+                          autocomplete="off"
+                          data-required="date"
+                          data-invalid-message="Please enter Date of Birth"
                         />
                       </div>
                       <div class="form-group">
@@ -179,8 +186,10 @@
                           type="text"
                           class="form-control"
                           id="country"
-                          aria-describedby="countryHelp"
                           placeholder="Enter Country"
+                          autocomplete="off"
+                          data-required="country"
+                          data-invalid-message="Please enter Country"
                         />
                       </div>
                       <div class="form-group">
@@ -191,6 +200,10 @@
                           id="city"
                           aria-describedby="cityHelp"
                           placeholder="Enter City"
+                          autocomplete="off"
+                          data-required="city"
+                          data-invalid-message="Please enter City"
+                          disabled
                         />
                       </div>
                     </div>
