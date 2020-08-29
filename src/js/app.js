@@ -54,6 +54,8 @@ $("#myTab a").on("click", function (e) {
 $("#phone").mask("(999) 999-99-99");
 
 $("#dateB").datepicker({
+  defaultViewDate: { year: 2014 },
+  todayBtn: true,
   clearBtn: true,
   language: "ru",
   todayHighlight: true,
@@ -150,29 +152,34 @@ async function onSubmitRegistration() {
 
   if (!isValidForm) return;
   try {
-    await registration({
+    const response = await registration({
       email: email.value,
       password: password.value,
       nickname: nickname.value,
-      first_name: first_name.value,
-      last_name: last_name.value,
+      first_name: first_name.value.replace(/ /g, "SpacE"),
+      last_name: last_name.value.replace(/ /g, "SpacE"),
       phone: phone.value.match(regExpPhone).join(""),
       gender_orientation,
-      country: country.value,
-      city: city.value,
+      country: country.value.replace(/ /g, "SpacE"),
+      city: city.value.replace(/ /g, "SpacE"),
       date_of_birth_day,
       date_of_birth_month,
       date_of_birth_year,
     });
-    // show success notify
-    notify({
-      msg:
-        "User created success. On your email sended link. Please verify your email.",
-      className: "alert-success",
-    });
+    // console.log(response);
+    if (response.error) {
+      notify({ msg: response.message, className: "alert-warning" });
+    } else {
+      // show success notify
+      notify({
+        msg: response.message,
+        className: "alert-success",
+      });
+    }
   } catch (err) {
+    console.dir(err);
     // show error notify
-    notify({ msg: "Registration failed", className: "alert-danger" });
+    notify({ msg: err.response.data.message, className: "alert-danger" });
   }
 }
 // denis.m.pcspace@gmail.com

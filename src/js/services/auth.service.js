@@ -29,7 +29,7 @@ export async function registration(params) {
     // console.log(response);
     return response;
   } catch (err) {
-    console.log(`login: ${err}`);
+    console.log(`registration: ${err}`);
     return Promise.reject(err);
   }
 }
